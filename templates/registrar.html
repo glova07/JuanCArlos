@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/registrar.css') }}">
+    <title>REGISTRO</title>
+</head>
+<body>
+    
+    <section>
+        <form action="/guardar" method="post" enctype="multipart/form-data">
+            <a href="/">Inicio</a>
+            <label for="nombres">Nombre </label>
+            <input type="text" name="nombres" id="nombres" pattern="[a-z ]{2,32}" maxlength="32" minlength="1" placeholder="Nombre(s)" tabindex="1" required autofocus>
+
+            <input type="text" name="apellidos" id="apellidos" pattern="[a-z ]{2,32}" maxlength="32" minlength="2" placeholder="Apellido(s)" tabindex="2" required >
+
+            <label for="tipo_documento">Tipo de documento</label>
+            <select name="tipo_documento" id="tipo_documento" tabindex="3" required>
+                <option value="">Elige</option>
+                <option value="C.C.">Cedula</option>
+                <option value="T.i.">Tarjeta identidad</option>
+            </select>
+
+            <label for="documento">N° documento</label>
+            <input type="number" name="documento" id="documento" tabindex="4" required inputmode="numeric">
+
+            <label for="genero"></label>
+            <select name="genero" id="genero" tabindex="5" required>
+                <option value="">Elige</option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+                <option value="No">No quiero decir</option>
+            </select>
+
+            <label for="celular" >Tu numero celular</label>
+            <input type="tel" name="celular" id="celular" inputmode="tel" pattern="[0-9]{10}" maxlength="10" minlength="10" placeholder="Telefono" tabindex="6" required>
+
+            <label for="correo">Correo</label>
+            <input type="email" name="correo" id="correo" maxlength="32" tabindex="7" inputmode="email" required>
+
+            <label for="contra">Contraseña:</label>
+        <input type="password" id="contra" name="contra" required
+        maxlength="15" minlength="8" tabindex="8">
+
+
+            <label for="fecha_nac">Tu fecha de nacimiento</label>
+            <input type="date" name="fecha_nac" id="fecha_nac" max="2010-12-31" min="1923-01-01" required>
+
+            <button type="submit">Guardar</button>
+
+        </form>
+    </section>
+
+</body>
+</html>
+</body>
+</html>
