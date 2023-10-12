@@ -11,6 +11,8 @@
     <section>
         <form action="/guardar" method="post" enctype="multipart/form-data">
             <a href="/">Inicio</a>
+
+            <h2>{{msg}}</h2>
             <label for="nombres">Nombre </label>
             <input type="text" name="nombres" id="nombres" pattern="[a-z ]{2,32}" maxlength="32" minlength="1" placeholder="Nombre(s)" tabindex="1" required autofocus>
 
@@ -26,7 +28,7 @@
             <label for="documento">N° documento</label>
             <input type="number" name="documento" id="documento" tabindex="4" required inputmode="numeric">
 
-            <label for="genero"></label>
+            <label for="genero">Genero</label>
             <select name="genero" id="genero" tabindex="5" required>
                 <option value="">Elige</option>
                 <option value="M">Masculino</option>
@@ -38,7 +40,7 @@
             <input type="tel" name="celular" id="celular" inputmode="tel" pattern="[0-9]{10}" maxlength="10" minlength="10" placeholder="Telefono" tabindex="6" required>
 
             <label for="correo">Correo</label>
-            <input type="email" name="correo" id="correo" maxlength="32" tabindex="7" inputmode="email" required>
+            <input type="email" name="correo" id="correo" maxlength="32" tabindex="7" inputmode="email" pattern="[a-z0-9._-]+\@[a-z0-9.-]+\.[a-z]" required>
 
             <label for="contra">Contraseña:</label>
         <input type="password" id="contra" name="contra" required

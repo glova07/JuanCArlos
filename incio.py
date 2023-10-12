@@ -50,12 +50,24 @@ def guardar():
     genero = request.form['genero']
     celular = request.form['celular']
     correo = request.form['correo']
-    contra = request.form['contra']
-    fecha_nac = request.form['fecha_nac']
-    ahora = datetime.now()
-    creado = ahora.strftime("%Y%m%d%H%M%S")
-    misUsuarios.agregar([nombres,apellidos,tipo_documento,documento,genero,celular,correo,contra,fecha_nac,creado])
-    return redirect('/')
+    sql = f"SELECT * FROM cliente WHERE correo='{correo}' OR documento='{documento}'"
+    con = mysql.connect()
+    cur = con.cursor()
+    cur.execute(sql)
+    resultado = cur.fetchall()
+    if len(resultado)>0:
+        return render_template("registrar.html",msg="El correo ya esta registrada o La cedula ya esta registrada")
+    else:
+        con.commit()
+        contra = request.form['contra']
+        cifrada = hashlib.sha512(contra.encode("utf-8")).hexdigest()
+        contra = cifrada
+        print(contra)
+        fecha_nac = request.form['fecha_nac']
+        ahora = datetime.now()
+        creado = ahora.strftime("%Y%m%d%H%M%S")
+        misUsuarios.agregar([nombres,apellidos,tipo_documento,documento,genero,celular,correo,contra,fecha_nac,creado])
+        return redirect('/')
 
 if __name__=='__main__':
     empresa_app.run(host='0.0.0.0',debug=True,port=2645)
