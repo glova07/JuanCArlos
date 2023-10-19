@@ -8,11 +8,77 @@ body, html{
 }
 
 body{
-    font-family: verdana;
+    font-family: 'Segoe UI', tahoma, sans-serif;
     font-size: 13px;
 }
 section#cuerpo{
-    background-color: rgb(250, 255, 0);
-    color: rgb(230, 2, 255);
+    background-color: rgb(11,5,29);
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
 }
-
+#forma_prueba{
+    background-color: rgb(218,235,235);
+    border-radius: 11px;
+    height: 320px;
+    margin: 0;
+    padding: 2.5em;
+    width: clamp(300px, 92%, 420px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+    #forma_prueba a{
+        color: #75689C;
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+        #forma_prueba a:hover{
+            color: rgb(113, 108, 57);
+        }
+    
+    #forma_prueba button{
+        background: #34275C;
+        border: none;
+        border-radius: 3px;
+        color: #75689C;
+        cursor: pointer;
+        display: block;
+        font-weight: bold;
+        margin-top: 2em;
+        padding: 13px 21px;
+        align-self: center;
+        width: 130px;
+    }
+    #forma_prueba button:hover{
+        background: #75689C;
+        color: #34275C;
+        transform: scale(1.1);
+    }
+    #forma_prueba input{
+        background: transparent;
+        border: none;
+        border-bottom: solid 2px #75689C;
+        color: #75689C; 
+        margin: 0;
+        padding: 13px 24px;
+        width: 100%; 
+    }
+        #forma_prueba input:focus{
+            transform: scale(1.1);
+        }
+    #forma_prueba label{
+        
+        color: #34275C;
+        display: block;
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+    #forma_prueba .contenedor-campo{
+        width: 100%;
+    }

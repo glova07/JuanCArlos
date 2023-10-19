@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+body, html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: verdana;
+    font-size: 13px;
+}
+section#cuerpo{
+    background-color: rgb(1, 1, 1);
+    color: rgb(170, 170, 170);
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+#forma_prueba{
+    background-color: azure;
+    /*max-width: 480px;
+    min-width: 280px;
+    width: 83vw;*/
+    border-radius: 11px;
+    padding: 16px;
+    width: clamp(280px, 83vw, 480px);
+}
+
+#forma_prueba input{
+    background: transparent;
+    border: none;
+    border-bottom: solid 2px #32b665;
+    color: rgb(49, 43, 226);
+    display: block;
+    margin: 5px 0;
+    padding: 11px 17px;
+    width: 100%;
+}
+#forma_prueba label{
+    color: #32b665;
+    font-size: 0.8em;
+}
+#forma_prueba button{
+    background: transparent;
+    border: solid 4px red;
+    border-radius: 5px;
+    color: red;
+    font-size: 1.1em;
+    margin: 2em 0;
+    padding: 6px 10px;
+}
+#forma_prueba a{
+    color: blueviolet;
+    display: block;
+}
